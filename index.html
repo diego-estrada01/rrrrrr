@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Lista de Tareas Pro</title>
+    <!-- Fuentes y FontAwesome para íconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Cabecera -->
+        <header>
+            <h1>Mis Tareas </h1>
+            <button id="theme-toggle" class="btn-icon" title="Cambiar tema">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </header>
+
+        <!-- Contador de pendientes -->
+        <div class="task-stats">
+            <span id="tasks-counter">0 tareas pendientes</span>
+        </div>
+
+        <!-- Formulario para agregar tareas -->
+        <form id="task-form">
+            <div class="input-group">
+                <input type="text" id="task-input" placeholder="¿Qué necesitas hacer hoy?" autocomplete="off" required>
+                <select id="task-category">
+                    <option value="Personal">Personal</option>
+                    <option value="Trabajo">Trabajo</option>
+                    <option value="Estudio">Estudio</option>
+                </select>
+                <button type="submit" id="btn-add">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+        </form>
+
+        <!-- Filtros -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="pending">Pendientes</button>
+            <button class="filter-btn" data-filter="completed">Completadas</button>
+        </div>
+
+        <!-- Lista de tareas -->
+        <ul id="task-list">
+            <!-- Las tareas se inyectarán aquí con JavaScript -->
+        </ul>
+        
+        <!-- Estado vacío -->
+        <div id="empty-state" class="empty-state hidden">
+            <i class="fa-solid fa-clipboard-check"></i>
+            <p>¡No hay tareas en esta sección!</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
